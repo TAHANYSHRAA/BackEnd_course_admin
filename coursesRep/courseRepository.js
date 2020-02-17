@@ -125,7 +125,6 @@ function SearchCourse(title,callback){
  }
  function getAllCoursesNgo(id_ngo, callback) {
    const sql = `select e.id  , e.title  , e.description , a.name  from courses e   join trainers a on e.trainer=a.id 
-
    join ngos o on e.id_ngo=o.id where e.id_ngo= `+id_ngo+`;`;
     createDatabaseConnection((connectError, connection) => {
         if (connectError) {
@@ -196,4 +195,3 @@ function UNRegisterTrainee(id_trainee,callback){
 module.exports = {
     AddNewCourses, getAllCourses, deleteCourse,getALLtrainer,updataInfromationCOurses,getOneCourse,SearchCourse,getAllCoursesNgo,registerTrainee,UNRegisterTrainee,GetRegisteredTrainees
 };
-
